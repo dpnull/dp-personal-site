@@ -26,7 +26,7 @@ export function useScrollSpy(ids: string[], containerRef?: RefObject<HTMLDivElem
     const handleScroll = () => {
       let currentId = ids[0];
       let lastSectionTop = -Infinity;
-      const debugRects: any[] = [];
+      const debugRects: { id: string, top: number }[] = [];
       ids.forEach((id, idx) => {
         const el = document.getElementById(id);
         if (el) {
@@ -87,7 +87,6 @@ export function useScrollSpy(ids: string[], containerRef?: RefObject<HTMLDivElem
             currentId = ids[ids.length - 1];
           }
         }
-        // eslint-disable-next-line no-console
         console.log('ScrollSpy:', debugRects, 'Active:', currentId);
       }
       setActiveId(currentId);

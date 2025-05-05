@@ -8,26 +8,6 @@ type NavLinksProps = {
   activeId: string;
 };
 
-const NavLink: React.FC<NavLinkProps> = ({ href, label, isActive = false }) => {
-  return (
-    <li className="list-item text-left">
-      <a
-        href={href}
-        className={`flex items-center py-3 ease-in-out duration-[0.15s] transition-[color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter] ${isActive ? 'text-slate-200' : 'text-slate-500'} hover:text-slate-200`}
-      >
-        <span
-          className={`mr-4 ${isActive ? 'w-16' : 'w-8'} h-px ease-in-out ${isActive ? 'bg-slate-200' : 'bg-slate-600'} duration-[0.15s] hover:w-16 hover:bg-slate-200`}
-        />
-        <span
-          className={`text-xs font-bold tracking-wider leading-4 uppercase ${isActive ? 'text-slate-200' : 'text-slate-500'} hover:text-slate-200`}
-        >
-          {label}
-        </span>
-      </a>
-    </li>
-  );
-};
-
 export default function NavLinks({ sectionIds, activeId }: NavLinksProps) {
   // Smooth scroll handler
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {

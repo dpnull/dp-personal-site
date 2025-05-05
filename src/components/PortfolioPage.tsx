@@ -17,7 +17,7 @@ export default function PortfolioPage() {
   useEffect(() => {
     const grid = gridRef.current;
     if (!grid) return;
-    const onWheel = (e: WheelEvent) => {
+    const onWheel = () => {
       // No longer need to check content
     };
     grid.addEventListener("wheel", onWheel, { passive: false });
