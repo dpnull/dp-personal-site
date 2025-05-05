@@ -1,8 +1,11 @@
 @import "tailwindcss";
+@import url('https://rsms.me/inter/inter.css');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0e172b;
+  --foreground: #96a5b9;
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1;
 }
 
 @theme inline {
@@ -14,13 +17,13 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0e172b;
+    --foreground: #94a3b8;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter, sans-serif;
 }

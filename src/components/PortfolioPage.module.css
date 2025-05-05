@@ -1,0 +1,63 @@
+.grid {
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: transparent;
+  border-radius: 1.5rem;
+  /* box-shadow: 0 8px 32px rgba(0,0,0,0.18); */
+  box-shadow: none;
+  width: 100vw;
+  gap: 3rem;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 6rem 2.5rem 3rem 2.5rem;
+  gap: 2.5rem;
+  background: transparent;
+  /* border-right: 1px solid #23272f; */
+  z-index: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  padding: 6rem 4rem 3rem 4rem;
+  background: transparent;
+  overscroll-behavior: contain;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    display: block;
+    max-width: 100vw;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .sidebar {
+    position: static;
+    height: auto;
+    /* border-right: none; */
+    border-bottom: 1px solid #23272f;
+    padding: 4rem 1.25rem 2rem 1.25rem;
+  }
+  .content {
+    height: auto;
+    padding: 4rem 1.25rem 2rem 1.25rem;
+  }
+}
+
+.mb-36 {
+  margin-bottom: 4rem; /* Reduce from 9rem (if that's what 36 means) to 4rem for less gap */
+} 

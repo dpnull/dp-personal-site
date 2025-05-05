@@ -1,0 +1,62 @@
+"use client";
+
+import React from 'react';
+import { NavLinkProps } from './types';
+
+type NavLinksProps = {
+  sectionIds: string[];
+  activeId: string;
+};
+
+const NavLink: React.FC<NavLinkProps> = ({ href, label, isActive = false }) => {
+  return (
+    <li className="list-item text-left">
+      <a
+        href={href}
+        className={`flex items-center py-3 ease-in-out duration-[0.15s] transition-[color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter] ${isActive ? 'text-slate-200' : 'text-slate-500'} hover:text-slate-200`}
+      >
+        <span
+          className={`mr-4 ${isActive ? 'w-16' : 'w-8'} h-px ease-in-out ${isActive ? 'bg-slate-200' : 'bg-slate-600'} duration-[0.15s] hover:w-16 hover:bg-slate-200`}
+        />
+        <span
+          className={`text-xs font-bold tracking-wider leading-4 uppercase ${isActive ? 'text-slate-200' : 'text-slate-500'} hover:text-slate-200`}
+        >
+          {label}
+        </span>
+      </a>
+    </li>
+  );
+};
+
+export default function NavLinks({ sectionIds, activeId }: NavLinksProps) {
+  // Smooth scroll handler
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    if (id === 'about') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+  return (
+    <nav aria-label="In-page jump links">
+      <ul className="mt-16 w-max">
+        {sectionIds.map(id => (
+          <li key={id} className="list-item text-left">
+            <a
+              href={id === 'about' ? '#top' : `#${id}`}
+              className={`flex items-center py-3 transition-colors duration-150 ${id === activeId ? 'text-slate-200' : 'text-slate-500'} hover:text-slate-200`}
+              onClick={e => handleNavClick(e, id)}
+            >
+              <span className={`mr-4 ${id === activeId ? 'w-16' : 'w-8'} h-px ${id === activeId ? 'bg-slate-200' : 'bg-slate-600'} transition-all duration-150 hover:w-16 hover:bg-slate-200`} />
+              <span className={`text-xs font-bold tracking-wider leading-4 uppercase ${id === activeId ? 'text-slate-200' : 'text-slate-500'} hover:text-slate-200`}>{id.charAt(0).toUpperCase() + id.slice(1)}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+} 
