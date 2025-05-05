@@ -10,10 +10,10 @@ export function useScrollSpy(ids: string[], containerRef?: RefObject<HTMLDivElem
 
   useEffect(() => {
     const container = containerRef?.current || window;
-    const getScrollTop = () => {
-      if (container instanceof Window) return window.scrollY;
-      return (container as HTMLDivElement).scrollTop;
-    };
+    // const getScrollTop = () => {
+    //   if (container instanceof Window) return window.scrollY;
+    //   return (container as HTMLDivElement).scrollTop;
+    // } // Commented out because it's unused
     const getBoundingClientRect = (el: HTMLElement) => {
       if (container instanceof Window) return el.getBoundingClientRect();
       const containerRect = (container as HTMLDivElement).getBoundingClientRect();

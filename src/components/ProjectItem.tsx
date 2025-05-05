@@ -13,7 +13,8 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
   technologies,
   githubStars,
   githubUrl,
-  links,
+  // Comment out unused variable
+  // const links = ...
   installCount,
   installUrl
 }) => {

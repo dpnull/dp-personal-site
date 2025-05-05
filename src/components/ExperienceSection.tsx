@@ -2,7 +2,6 @@
 
 import React from 'react';
 import ExperienceItem from './ExperienceItem';
-import { ExperienceItemProps } from './types';
 
 const ExperienceSection: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
   const experiences = [

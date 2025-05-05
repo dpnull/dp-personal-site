@@ -2,7 +2,7 @@
 import AboutSection from "./AboutSection";
 import ExperienceSection from "./ExperienceSection";
 import ProjectsSection from "./ProjectsSection";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./PortfolioPage.module.css";
 import SocialLinks from "./SocialLinks";
 import NavLinks from "./NavLinks";

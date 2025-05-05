@@ -13,12 +13,13 @@ interface ExperienceItemFullProps extends ExperienceItemProps {
 const ExperienceItem: React.FC<ExperienceItemFullProps> = ({
   dateRange,
   title,
-  company,
-  companyUrl,
+  // Comment out unused variables
+  // const company = ...
+  // const companyUrl = ...
+  // const previousPositions = ...
+  // const links = ...
   description,
   technologies,
-  previousPositions,
-  links,
   role,
   bullets
 }) => {

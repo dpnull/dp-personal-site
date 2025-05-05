@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import TechTag from './TechTag';
 
-const languageFromTitle = (title: string) => {
-  const match = title.match(/\((\d{4})\)\s*–\s*([A-Za-z+#]+)/);
-  return match ? match[2] : null;
-};
+// const languageFromTitle = (title: string) => {
+//   const match = title.match(/\((\d{4})\)\s*–\s*([A-Za-z+#]+)/);
+//   return match ? match[2] : null;
+// } // Commented out because it's unused
 
 const projects = [
   {
